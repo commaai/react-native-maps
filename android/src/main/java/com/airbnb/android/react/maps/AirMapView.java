@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.util.Log;
 
 import com.facebook.react.bridge.LifecycleEventListener;
 import com.facebook.react.bridge.ReadableArray;
@@ -660,6 +661,7 @@ public class AirMapView extends MapView implements GoogleMap.InfoWindowAdapter,
 
     @Override
     public void onMarkerDragStart(Marker marker) {
+        Log.e("markerDragStart", "");
         WritableMap event = makeClickEventData(marker.getPosition());
         manager.pushEvent(this, "onMarkerDragStart", event);
 
@@ -670,6 +672,7 @@ public class AirMapView extends MapView implements GoogleMap.InfoWindowAdapter,
 
     @Override
     public void onMarkerDrag(Marker marker) {
+        Log.e("markerDrag", "");
         WritableMap event = makeClickEventData(marker.getPosition());
         manager.pushEvent(this, "onMarkerDrag", event);
 
