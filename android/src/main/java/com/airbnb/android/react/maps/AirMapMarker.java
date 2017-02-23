@@ -309,6 +309,7 @@ public class AirMapMarker extends AirMapFeature {
         options.draggable(draggable);
         Log.e("Draggable ", Boolean.toString(draggable));
         options.zIndex(zIndex);
+        Log.e("zIndex ", Integer.toString(zIndex));
         options.alpha(opacity);
         options.icon(getIcon());
         return options;
