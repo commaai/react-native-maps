@@ -306,6 +306,7 @@ public class AirMapMarker extends AirMapFeature {
         options.rotation(rotation);
         options.flat(flat);
         options.draggable(draggable);
+        Log.e("Draggable ", draggable.toString());
         options.zIndex(zIndex);
         options.alpha(opacity);
         options.icon(getIcon());
