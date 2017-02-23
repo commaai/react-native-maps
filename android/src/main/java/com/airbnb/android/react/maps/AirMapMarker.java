@@ -7,6 +7,7 @@ import android.graphics.drawable.Animatable;
 import android.net.Uri;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.util.Log;
 
 import com.facebook.common.references.CloseableReference;
 import com.facebook.datasource.DataSource;
@@ -306,7 +307,7 @@ public class AirMapMarker extends AirMapFeature {
         options.rotation(rotation);
         options.flat(flat);
         options.draggable(draggable);
-        Log.e("Draggable ", draggable.toString());
+        Log.e("Draggable ", Boolean.toString(draggable));
         options.zIndex(zIndex);
         options.alpha(opacity);
         options.icon(getIcon());
