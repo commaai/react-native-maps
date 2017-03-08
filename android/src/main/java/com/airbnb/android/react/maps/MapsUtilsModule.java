@@ -34,7 +34,7 @@ public class MapsUtilsModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void isLocationOnPath(ReadableArray coordinate, ReadableArray polylineCoords, double toleranceMeters, Callback callback) {
+    public void indexOfLocationOnPolyline(ReadableArray coordinate, ReadableArray polylineCoords, double toleranceMeters, Callback callback) {
     	List<LatLng> polylineCoordsList = this.polylineCoordsToLatLngList(polylineCoords);
 
     	int index = PolyUtils.locationIndexOnEdgeOrPath(new LatLng(coordinate.getDouble(0), coordinate.getDouble(1)),
