@@ -13,10 +13,9 @@ import java.util.List;
 
 public class ExampleApplication extends Application implements ReactApplication {
   private final ReactNativeHost reactNativeHost = new ReactNativeHost(this) {
-    @Override protected boolean getUseDeveloperSupport() {
-      return BuildConfig.DEBUG;
+    @Override public boolean getUseDeveloperSupport() {
+        return BuildConfig.DEBUG;
     }
-
     @Override protected List<ReactPackage> getPackages() {
       return Arrays.asList(
           new MainReactPackage(),

@@ -44,7 +44,7 @@ android {
 
   defaultConfig {
     minSdkVersion 16
-    targetSdkVersion 23
+    targetSdkVersion 22
   }
 
   lintOptions {
@@ -56,4 +56,5 @@ dependencies {
   compile "com.facebook.react:react-native:+"
   compile "com.google.android.gms:play-services-base:9.8.0"
   compile "com.google.android.gms:play-services-maps:9.8.0"
+  compile "com.google.maps.android:android-maps-utils:0.5"
 }
