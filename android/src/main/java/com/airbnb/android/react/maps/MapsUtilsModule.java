@@ -7,6 +7,7 @@ import com.facebook.react.bridge.ReactMethod;
 
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReadableArray;
+import com.facebook.react.bridge.WritableNativeArray;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.maps.android.SphericalUtil;
 import java.util.ArrayList;
@@ -55,9 +56,12 @@ public class MapsUtilsModule extends ReactContextBaseJavaModule {
     public void computeOffset(ReadableArray from, double distance, double heading, Promise promise) {
        LatLng fromCoord = this.latlngFromReadableArray(from);
        LatLng offsetCoord = SphericalUtil.computeOffset(fromCoord, distance, heading);
-       double[] coordPrimitive = new double[]{offsetCoord.latitude, offsetCoord.longitude};
-       promise.resolve(coordPrimitive);
-    }
+       WritableNativeArray coords = new WritableNativeArray();
+       coords.pushDouble(offsetCoord.latitude);
+       coords.pushDouble(offsetCoord.longitude);
+
+       promise.resolve(coords);
+     }
 	/**
 	 * Returns haversine(angle-in-radians).
 	 * hav(x) == (1 - cos(x)) / 2 == sin(x / 2)^2.
